@@ -22,6 +22,8 @@ var score = 0;
 var lives = 3;
 var message = document.getElementById("message");
 var color = "red";
+var bounce = new Audio('audio/bounce.mp3');
+var brick = new Audio('audio/bricks.mp3');
 
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
@@ -115,7 +117,6 @@ function draw() {
     drawScore();
     drawLives();
     collisionDetection();
-    var bounce = new Audio('bounce.mp3');
     x += dx;
     y += dy;
 
@@ -174,6 +175,7 @@ function collisionDetection() {
             var b = bricks[c][r];
             if(b.status == 1) {
                 if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                    brick.play();
                     dy = -dy;
                     b.status = 0;
                     score++;
