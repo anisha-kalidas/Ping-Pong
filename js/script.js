@@ -87,7 +87,9 @@ function drawBricks() {
                 bricks[c][r].y = brickY;
                 ctx.beginPath();
                 ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                ctx.fillStyle = "#0095DD";
+                ctx.strokeStyle = "black";
+                ctx.stroke();
+                ctx.fillStyle = "#e0b56f";
                 ctx.fill();
                 ctx.closePath();
             }
@@ -175,6 +177,7 @@ function collisionDetection() {
             var b = bricks[c][r];
             if(b.status == 1) {
                 if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                    brick.currentTime = 0;
                     brick.play();
                     dy = -dy;
                     b.status = 0;
@@ -192,14 +195,14 @@ function collisionDetection() {
 // add a score board
 function drawScore() {
     ctx.font = "16px Arial";
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "#0095DD";
     ctx.fillText("Score: "+score, 8, 20);
 }
 
 // add life counter
 function drawLives() {
     ctx.font = "16px Arial";
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "#0095DD";
     ctx.fillText("Lives: "+lives, canvas.width-65, 20);
 }
 
