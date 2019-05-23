@@ -23,6 +23,7 @@ var lives = 3;
 var message = document.getElementById("message");
 var color = "red";
 var bounce = new Audio('audio/bounce.mp3');
+bounce.volume = 0.2;
 var brick = new Audio('audio/bricks.mp3');
 
 var bricks = [];
