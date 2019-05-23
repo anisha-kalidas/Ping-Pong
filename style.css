@@ -1,0 +1,30 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("background.png");
+}
+
+canvas {
+    background: #eaeaea;
+    display: block;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    border: solid gray 3px;
+}
+
+p {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 200;
+    margin-top: 45px;
+    font-family: 'Concert One', cursive;
+    color: #636363;
+
+}
