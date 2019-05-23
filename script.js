@@ -115,6 +115,7 @@ function draw() {
     drawScore();
     drawLives();
     collisionDetection();
+    var bounce = new Audio('bounce.mp3');
     x += dx;
     y += dy;
 
@@ -130,6 +131,7 @@ function draw() {
     } else if(y + dy > canvas.height-ballRadius-18) {
         // if the paddle is in the way, then bounce
         if (x > paddleX-1 && x < paddleX + paddleWidth +1) {
+            bounce.play();
             dy = -dy * 1.15;
             color = randomColor({
                 luminosity: "bright"
