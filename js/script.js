@@ -23,8 +23,9 @@ var lives = 3;
 var message = document.getElementById("message");
 var color = "red";
 var bounce = new Audio('audio/bounce.mp3');
-bounce.volume = 0.2;
+bounce.volume = 0.1;
 var brick = new Audio('audio/bricks.mp3');
+brick.volume = 0.5;
 
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
